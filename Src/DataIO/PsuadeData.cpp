@@ -1568,7 +1568,7 @@ int PsuadeData::readPsuadeIO(const char *fname)
                  ss+1);
           exit(1);
         }
-        else if (isnan(sampleInputs[ss*nInputs+ii]))
+        else if (std::isnan(sampleInputs[ss*nInputs+ii]))
         {
           printf("readPsuadeIO ERROR: sample %d input is NaN.\n",
                  ss+1);
@@ -1584,7 +1584,7 @@ int PsuadeData::readPsuadeIO(const char *fname)
                  ss+1);
           exit(1);
         }
-        else if (isnan(sampleOutputs[ss*nOutputs+ii]))
+        else if (std::isnan(sampleOutputs[ss*nOutputs+ii]))
         {
           printf("readPsuadeIO ERROR: sample %d output is NaN.\n",
                  ss+1);

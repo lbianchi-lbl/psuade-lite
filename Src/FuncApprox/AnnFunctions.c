@@ -542,7 +542,7 @@ extern void ANNF_trainNet(int iNet, int iPat, char *learnFuncName,
          currMSE = aParamOut[0]/krui_getNoOfPatterns();
 
          /* check if NaN error encountered */
-         if (isnan(aParamOut[0]))
+         if (std::isnan(aParamOut[0]))
          { 
             if (verboseFlag_ == 1)
             {
