@@ -41,7 +41,7 @@
 #define psmin(a,b) (((a)<(b)) ? (a) : (b))
 #define psmax(a,b) (((a)<(b)) ? (b) : (a))
 
-#if defined(__MINGW64__)
+#if defined(CONDA_BUILD_M2W64_TOOLCHAIN)
 using std::isnan;
 #endif
 

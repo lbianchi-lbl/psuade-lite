@@ -196,9 +196,5 @@ int     gettimeofday(struct timeval *,struct timezone *);
 
 #define Macheps     3.40282347e-38
 
-#ifndef M_PI
-#define M_PI (3.14159265358979323846)
-#endif
-
 #endif /* __PSUADEUTILH__ */
 
