@@ -9,7 +9,7 @@ set "FORTRAN=%LIBRARY_BIN%\gfortran.exe"
 
 cmake %SRC_DIR% ^
     -DCMAKE_BUILD_SHARED=ON ^
-    -DCMAKE_CXX_FLAGS="--std=c++14 -D_USE_MATH_DEFINES" ^
+    -DCMAKE_CXX_FLAGS="--std=c++14" ^
     -G "MinGW Makefiles" ^
     -DCMAKE_INSTALL_PREFIX="%PREFIX%"
 
