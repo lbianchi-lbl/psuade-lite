@@ -1,6 +1,9 @@
 name: Build Conda package
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
     types:
       - opened
@@ -28,7 +31,6 @@ jobs:
         uses: conda-incubator/setup-miniconda@v2
         with:
           activate-environment: build-psuade
-          python-version: '3.7'
           channels: conda-forge
       - name: Set up extra build tools for macOS
         if: contains(matrix.os, 'macos')
@@ -44,6 +46,8 @@ jobs:
       - name: Run conda-build
         working-directory: .conda-build
         run: |
+          echo '::group::Output of "conda install/list"'
           conda install --quiet --yes conda-build
           conda list
+          echo '::endgroup::'
           conda-build .
