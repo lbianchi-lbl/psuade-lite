@@ -30,6 +30,15 @@ jobs:
           activate-environment: build-psuade
           python-version: '3.7'
           channels: conda-forge
+      - name: Set up extra build tools for macOS
+        if: contains(matrix.os, 'macos')
+        working-directory: /tmp
+        env:
+          sdk_name: MacOSX10.9.sdk
+        run: |
+          wget https://github.com/phracker/MacOSX-SDKs/releases/download/10.13/${sdk_name}.tar.xz
+          tar -xf ${sdk_name}.tar.xz
+          echo "CONDA_BUILD_SYSROOT=/tmp/${sdk_name}" >> "$GITHUB_ENV"
       - name: Run conda-build
         working-directory: .conda-build
         run: |
