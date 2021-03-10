@@ -200,5 +200,9 @@ int     gettimeofday(struct timeval *,struct timezone *);
 #define M_PI (3.14159265358979323846)
 #endif
 
+#if defined(__MINGW64__)
+using std::isnan;
+#endif
+
 #endif /* __PSUADEUTILH__ */
 
